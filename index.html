@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Йога - студия "Белые облака"</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="text-center my-4">
+            <h1>Белые облака - Йога - студия</h1>
+            <div id="logo" class="mb-3"><img src="IMG/5342123.jpg" alt="Логотип" class="img-fluid"></div>
+        </header>
+
+        <nav class="nav justify-content-center mb-4">
+            <a class="nav-link" href="index.html">Главная страница</a>
+            <a class="nav-link" href="interier.html">Интерьер</a>
+            <a class="nav-link" href="about.html">О компании</a>
+        </nav>
+
+        <div id="main" class="text-center">
+            <p class="lead">Белое облако - новая йога-студия для развития вас как личности.</p>
+            <p>Мы предлагаем следующие виды йоги:</p>
+            <ul class="list-unstyled">
+                <li>Кундалини-йога</li>
+                <li>Аштанга-виньяса йога</li>
+                <li>Перинатальная йога</li>
+                <li>Йога в гамаках</li>
+                <li>Раджа-йога</li>
+                <li>Универсальная йога</li>
+            </ul>
+            <p>Будем рады, если вы посетите нашу студию!</p>
+        </div>
+
+        <footer class="text-center py-4 bg-light">
+            Это сайт, предназначенный для обучения. Все права защищены.
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>// Объект для хранения статистики
+        const metrics = {
+            buttonClicks: 0,
+            pageViews: 0,
+        };
+        
+        // Функция для обновления метрики
+        function updateMetrics() {
+            alert(`Статистика:
+            - Количество кликов по кнопкам: ${metrics.buttonClicks}
+            - Количество переходов на страницы: ${metrics.pageViews}`);
+        }
+        
+        // Отслеживание кликов по кнопкам
+        document.querySelectorAll('button').forEach(button => {
+            button.addEventListener('click', () => {
+                metrics.buttonClicks++;
+                updateMetrics(); // Отобразить статистику после каждого клика
+            });
+        });
+        
+        // Отслеживание переходов на страницы
+        window.addEventListener('load', () => {
+            metrics.pageViews++;
+            updateMetrics(); // Отобразить статистику при загрузке страницы
+        });
+    </script>
+</body>
+</html>

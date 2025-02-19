@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>О компании - Йога студия "Белые облака"</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script>
+        // Функция для проверки имени
+        function isValidName(name) {
+            return /^[А-Яа-яЁё\s-]+$/.test(name);
+        }
+
+        // Функция для проверки номера телефона
+        function isValidPhone(phone) {
+            return /^(?:\+7|8)\d{10}$/.test(phone);
+        }
+
+        // Функция для валидации формы
+        function validateForm(event) {
+            event.preventDefault(); // Останавливаем отправку формы
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+
+            // Проверка имени
+            if (!isValidName(name)) {
+                alert('Имя должно содержать только русские буквы.');
+                return;
+            }
+
+            // Проверка номера телефона
+            if (!isValidPhone(phone)) {
+                alert('Номер телефона должен начинаться с +7 или 8 и содержать 10 цифр.');
+                return;
+            }
+
+            // Если все проверки пройдены, отправляем форму
+            alert('Форма успешно отправлена!');
+            // Здесь вы можете добавить код для отправки формы, если нужно
+            // document.querySelector('form').submit();
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header -->
+    <header class="text-center my-4">
+        <h1>Белые облака - О компании</h1>
+        <div id="logo" class="mb-3"><img src="IMG/5342123.jpg" alt="Логотип" class="img-fluid"></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav justify-content-center mb-4">
+        <a class="nav-link" href="index.html">Главная страница</a>
+        <a class="nav-link" href="interier.html">Интерьер</a>
+        <a class="nav-link" href="about.html">О компании</a>
+    </nav>
+
+    <!-- Main content -->
+    <div id="main">
+        <p class="lead">Мы — команда профессионалов, увлеченных йогой и здоровым образом жизни...</p>
+        
+        <!-- Company Images with Text -->
+        <div class="row my-4">
+            <div class="col-md-6">
+                <p>Наши основатели имеют богатый опыт в сфере йоги и фитнеса...</p>
+            </div>
+            <div class="col-md-6">
+                <img src="IMG/int5.webp" class="img-fluid rounded shadow-sm" alt="Интерьер 1">
+            </div>
+        </div>
+
+        <div class="row my-4">
+            <div class="col-md-6">
+                <img src="IMG/int8.webp" class="img-fluid rounded shadow-sm" alt="Интерьер 2">
+            </div>
+            <div class="col-md-6">
+                <p>Мы предлагаем широкий спектр занятий, включая различные стили йоги...</p>
+            </div>
+        </div>
+
+        <!-- Schedule Table -->
+        <h2 class="mb-3">Расписание занятий</h2>
+        <table class="table table-striped table-bordered">
+            <thead class="table-light">
+                <tr>
+                    <th>День недели</th>
+                    <th>Время</th>
+                    <th>Стиль йоги</th>
+                    <th>Преподаватель</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Понедельник</td>
+                    <td>10:00 - 11:00</td>
+                    <td>Кундалини-йога</td>
+                    <td>Анна Иванова</td>
+                </tr>
+                <tr>
+                    <td>Среда</td>
+                    <td>18:00 - 19:00</td>
+                    <td>Аштанга-виньяса йога</td>
+                    <td>Петр Смирнов</td>
+                </tr>
+                <tr>
+                    <td>Пятница</td>
+                    <td>08:00 - 09:00</td>
+                    <td>Йога в гамаках</td>
+                    <td>Мария Кузнецова</td>
+                </tr>
+                <tr>
+                    <td>Воскресенье</td>
+                    <td>16:00 - 17:00</td>
+                    <td>Раджа-йога</td>
+                    <td>Игорь Петров</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="form.php" method="POST" onsubmit="validateForm(event)">
+            <h2>Связаться с нами</h2>
+            <div class="mb-3">
+                <label for="name" class="form-label">ФИО:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="phone" class="form-label">Номер телефона:</label>
+                <input type="tel" id="phone" name="phone" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Сообщение:</label>
+                <textarea id="message" name="message" rows="5" class="form-control" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Отправить</button>
+        </form>        
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center py-4 bg-light">
+        Это сайт, предназначенный для обучения. Все права защищены.
+    </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
